@@ -1,0 +1,13 @@
+02: UNK HEADER
+[COUNT]
+...
+
+
+2080 %s
+2081 %{private}s
+2082 %{public}s
+1024 %d %x ...
+2112 %@
+1040 %. (next int32_t)
+2048 %lu
+2096 %P
