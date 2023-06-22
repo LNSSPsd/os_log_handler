@@ -103,7 +103,7 @@ void format_os_log(FILE *output, void *log_ent, const char *format, uint8_t *buf
 	// \%(\{((public|private|time_t|timeval|timespec|errno|iec-bytes|bitrate|iec-bitrate|uuid_t)((((( )?)*?),((( )?)*?))(?!\}))?)*?\})?((\.)(\d*))?([a-zA-Z])
 	// \%(\{(((public|private|time_t|timeval|timespec|errno|iec-bytes|bitrate|iec-bitrate|uuid_t)(( *, *)(?!\}))?)*?)\})?((\.)?((\d+)|\*))?([a-zA-Z])
 	// TODO: Avoid duplicated compilations
-	int regerr=regcomp(&regex_item, "%(\\{(((public|private|time_t|timeval|timespec|errno|iec-bytes|bitrate|iec-bitrate|uuid_t)(( *, *))?)*)\\})?((\\.)?\\*?([0-9]+)?)?(l{0,2})([a-zA-Z])", REG_EXTENDED);
+	int regerr=regcomp(&regex_item, "%(\\{(((public|private|time_t|timeval|timespec|errno|iec-bytes|bitrate|iec-bitrate|uuid_t)(( *, *))?)*)\\})?((\\.)?\\*?([0-9]+)?)?(l{0,2})([a-zA-Z@])", REG_EXTENDED);
 	if(regerr) {
 		char errbuf[64]={0};
 		regerror(regerr, &regex_item, errbuf, 64);
